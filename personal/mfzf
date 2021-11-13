@@ -1,0 +1,12 @@
+#!/bin/sh
+
+playlist_dir=~/music/fav
+
+if [ "$1" = "-e" ]; then
+    find . -type f -name "*.mp3" -o -name "*.flac" | fzf -e | sed 's! !\\ !g' | xargs -r mocp -l 
+elif [ "$1" = "-m" ]; then
+    find . -type f -name "*.mp3" -o -name "*.flac" | fzf -e | sed 's! !\\ !g' | xargs -I SUB cp SUB "$playlist_dir"
+    notify-send "Track copied to favorites"
+else
+    find . -type f -name "*.mp3" -o -name "*.flac" | fzf | sed 's! !\\ !g' | xargs -r mocp -l 
+fi
