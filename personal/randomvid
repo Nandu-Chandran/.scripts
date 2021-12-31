@@ -1,0 +1,9 @@
+#!/bin/sh
+video_path=~/vids/yt/ 
+
+file="$(find $video_path -maxdepth 1 -type f -name "*.mp4" | shuf -n1 | sed 's! !\\ !g'| xargs)"
+mpv "$file"  
+[ $(echo "No\nYes" | dmenu -i -p "Delete? $file") = "Yes" ] && rm "$file" && notify-send " $file Deleted!"
+
+#rm $file
+

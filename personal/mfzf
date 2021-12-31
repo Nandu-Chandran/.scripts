@@ -10,3 +10,5 @@ elif [ "$1" = "-m" ]; then
 else
     find . -type f -name "*.mp3" -o -name "*.flac" | fzf | sed 's! !\\ !g' | xargs -r mocp -l 
 fi
+
+

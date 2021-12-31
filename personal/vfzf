@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ "$1" = "-e" ]; then
+    find . -type f -name "*.mp4" -o -name "*.webp" | fzf -e | sed 's! !\\ !g' | xargs -r mpv
+else
+    find . -type f -name "*.mp4" -o -name "*.webp" | fzf | sed 's! !\\ !g' | xargs -r mpv 
+fi
+
+
