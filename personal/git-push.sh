@@ -1,14 +1,23 @@
 #!/bin/bash
 
-echo "Enter message"
-read message
-git add .
-git commit -m "${message}"
-if [ -n "$(git status --porcelain)" ];
+if [[ "$1" -eq "-d" ]]; 
 then
-    echo "ITS IS CLEAN"
+    git add .
+    echo "Commiting with date"
+    git commit -m "$(date "+%c")"
+    git push
+    
 else
-    git status
-    echo "Pushing data to the remote server!!"
-    git push -u origin master
+    echo "Enter message"
+    read message
+    git add .
+    git commit -m "${message}"
+    if [ -n "$(git status --porcelain)" ];
+    then
+        echo "ITS IS CLEAN"
+    else
+        git status
+        echo "Pushing data to the remote server!!"
+        git push -u origin master
+    fi
 fi
