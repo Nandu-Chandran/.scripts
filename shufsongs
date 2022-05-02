@@ -1,0 +1,14 @@
+#!/bin/sh
+
+sync_dir=~/music/phone-music
+music_dir=~/music
+
+select=30
+
+#cleaning old directory
+rm $sync_dir/*
+
+find "$music_dir" -mindepth 1 -type f -name "*.flac" -o -name "*.wav"|\
+    shuf -n"$select" | xargs -I SUB cp SUB "$sync_dir"
+
+notify-send "Generated playlist of "$select" songs"
