@@ -2,6 +2,7 @@
 
 loc=("/home/nc/.scripts" \
     "/home/nc/.dotfiles" \
+    "/home/nc/notes"\
     "/home/nc/personal")
 
 function updateRepo(){
