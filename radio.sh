@@ -1,6 +1,5 @@
 #!/bin/bash
-# Dmenu script for editing some of my more frequently edited config files.
-
+# script for online radio
 
 declare -a options=("mango"
 "club"
@@ -35,8 +34,6 @@ case "$choice" in
 	;;
 esac
 
-# Ultimately, what do want to do with our choice?  Open in our editor!
 killall mpv
 mpv "$choice" &
-# emacsclient -c -a emacs "$choice"
 
