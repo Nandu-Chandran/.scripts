@@ -1,0 +1,15 @@
+#!/bin/sh
+
+editor=vim
+dir=~/.scripts
+folder=$(printf ".dotfiles\\n.scripts\\n" | dmenu -i)
+
+[ -n $folder ] || exit
+
+selection=$(find "$folder" | dmenu -l 20) 
+
+[ -n $selection ] || exit
+
+st -e $editor $selection
+
+
