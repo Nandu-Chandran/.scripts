@@ -1,0 +1,3 @@
+sudo apt install sxiv mocp cmus
+sudo apt install exa bat riipgrep fzf zoxide entr
+
