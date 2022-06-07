@@ -5,6 +5,8 @@ declare -a options=("mango"
 "club"
 "mirchi"
 "pattupetti"
+"rainbow-fm-kochi"
+"aakashavani"
 "quit"
 )
 
@@ -29,7 +31,13 @@ case "$choice" in
 	pattupetti)
 		choice="https://listen.radioking.com/radio/305023/stream/354512"
 	;;
-	*)
+	rainbow-fm-kochi)
+		choice="https://air.pc.cdn.bitgravity.com/air/live/pbaudio045/playlist.m3u8"
+    ;;
+    aakashavani)
+		choice="https://air.pc.cdn.bitgravity.com/air/live/pbaudio044/playlist.m3u8"
+    ;;
+    *)
 		exit 1
 	;;
 esac

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+
+QUERY=$(echo ' ' | dmenu -p "Search:")
+if [ -z "$QUERY" ]
+then
+    exit 1
+else
+    qutebrowser "$QUERY"
+fi
+
