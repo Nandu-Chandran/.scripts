@@ -1,0 +1,6 @@
+#!/bin/sh
+
+sudo powertop -q --auto-tune 
+sudo ifconfig enp7s0 down
+xbacklight -set 5
+#echo "autotuned using powertop\n disabled network adapter\n screen brightness set to 5%"
