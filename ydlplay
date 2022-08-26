@@ -1,0 +1,10 @@
+#!/bin/sh
+
+query=$(echo ' ' | dmenu -p "Enter Url: ")
+
+if [ -z "$query" ]
+then 
+     exit
+else
+    mpv --no-video "$query"
+fi
