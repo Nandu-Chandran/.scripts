@@ -1,0 +1,5 @@
+#!/bin/sh
+notify-send "Starting the shutdown routine!"
+github-sync.sh
+notify-send "Synced Github"
+prompt "Do you want to shutdown?" "shutdown now"
