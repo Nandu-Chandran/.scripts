@@ -2,8 +2,9 @@
 
 loc=("/home/nc/.scripts" \
     "/home/nc/.dotfiles" \
-    "/home/nc/notes"\
-    "/home/nc/personal")
+    "/home/nc/pjt/thinkpalm"\
+    "/home/nc/Documents/nandu-chandran.bitbucket.io"\
+    "/home/nc/personal" ) 
 
 function updateRepo(){
     cd "$1"
