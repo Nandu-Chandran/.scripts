@@ -1,0 +1,13 @@
+#!/bin/sh
+
+note="$(xclip -o)"
+file="$HOME/personal/notes.txt"
+
+if grep -q "^$note$" "$file";then
+    notify-send "Oops Note already added"
+else
+
+    notify-send "Notes Added " "$note is saved to file."
+    echo "$note" >> "$file"
+
+fi
